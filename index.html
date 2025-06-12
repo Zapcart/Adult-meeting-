@@ -7,15 +7,51 @@
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
     <style>
-        body { font-family: 'Poppins', sans-serif; }
-        .hero-bg { background-image: url('https://source.unsplash.com/random/1920x1080/?city'); }
-        .premium-badge { background-color: gold; color: black; padding: 2px 8px; border-radius: 9999px; font-size: 12px; }
-        .featured { border: 2px solid gold; }
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(135deg, #6b0f9a, #ff0066, #ff4d4d); /* Sexy purple-pink-red gradient */
+            color: #333;
+        }
+        .hero-bg {
+            background-image: url('https://source.unsplash.com/random/1920x1080/?abstract,sexy'); /* Sultry abstract image */
+            background-size: cover;
+            background-position: center;
+        }
+        .section-bg {
+            background: rgba(255, 255, 255, 0.95); /* Light, semi-transparent white */
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+        }
+        .btn-primary {
+            background: #ff0066; /* Neon pink */
+            color: white;
+            padding: 10px 20px;
+            border-radius: 9999px;
+            transition: all 0.3s ease;
+        }
+        .btn-primary:hover {
+            background: #e6005c; /* Darker pink hover */
+            box-shadow: 0 0 15px rgba(255, 0, 102, 0.7); /* Glow effect */
+        }
+        .premium-badge {
+            background: gold;
+            color: black;
+            padding: 4px 10px;
+            border-radius: 9999px;
+            font-size: 12px;
+        }
+        .featured {
+            border: 2px solid #ffd700;
+            background: rgba(255, 215, 0, 0.1);
+        }
+        nav, footer {
+            background: #4b0082; /* Deep purple */
+        }
     </style>
 </head>
-<body class="bg-gray-100">
+<body>
     <!-- Header -->
-    <header class="bg-teal-600 text-white py-4">
+    <header class="text-white py-4">
         <nav class="container mx-auto flex justify-between items-center">
             <h1 class="text-2xl font-bold">Adult Meeting</h1>
             <ul class="flex space-x-4">
@@ -32,24 +68,24 @@
     </header>
 
     <!-- Hero Section -->
-    <section id="home" class="hero-bg bg-cover bg-center text-white py-20 text-center">
-        <div class="container mx-auto">
-            <h2 class="text-4xl font-bold mb-4">Connect with People Across India</h2>
-            <p class="text-lg mb-6">Find your perfect meeting or join as a professional today!</p>
-            <a href="#register" class="bg-teal-600 text-white px-6 py-3 rounded-full hover:bg-teal-700">Join Now</a>
+    <section id="home" class="hero-bg text-white py-20 text-center">
+        <div class="container mx-auto section-bg p-8">
+            <h2 class="text-4xl font-bold mb-4">Connect with Passion Across India</h2>
+            <p class="text-lg mb-6">Find your perfect match or join as a professional today!</p>
+            <a href="#register" class="btn-primary">Join Now</a>
         </div>
     </section>
 
     <!-- Renewal Banner -->
-    <section class="bg-yellow-200 py-4 text-center">
-        <p class="text-lg font-bold">Renew your subscription early and save ₹500! Use code: EARLY500</p>
+    <section class="bg-yellow-100 py-4 text-center">
+        <p class="text-lg font-bold text-gray-800">Renew early & save ₹500! Use code: <span class="text-pink-600">EARLY500</span></p>
     </section>
 
     <!-- Registration Form -->
-    <section id="register" class="py-12 bg-white">
-        <div class="container mx-auto">
-            <h2 class="text-3xl font-bold text-center mb-8">Register Now</h2>
-            <form id="registerForm" class="max-w-lg mx-auto bg-gray-100 p-8 rounded-lg shadow-md">
+    <section id="register" class="py-12">
+        <div class="container mx-auto section-bg p-8">
+            <h2 class="text-3xl font-bold text-center mb-8 text-gray-800">Register Now</h2>
+            <form id="registerForm" class="max-w-lg mx-auto">
                 <div class="mb-4">
                     <label for="name" class="block text-gray-700">Full Name</label>
                     <input type="text" id="name" class="w-full p-2 border rounded" required>
@@ -115,70 +151,70 @@
                     <input type="checkbox" name="looking_for" value="female"> Female
                     <input type="checkbox" name="looking_for" value="call_boy_job"> Call Boy Job
                 </div>
-                <button type="submit" class="w-full bg-teal-600 text-white p-2 rounded hover:bg-teal-700">Register</button>
+                <button type="submit" class="btn-primary w-full">Register</button>
             </form>
         </div>
     </section>
 
     <!-- Subscription Plans -->
-    <section id="subscriptions" class="py-12 bg-gray-100">
-        <div class="container mx-auto">
-            <h2 class="text-3xl font-bold text-center mb-8">Choose Your Plan</h2>
+    <section id="subscriptions" class="py-12">
+        <div class="container mx-auto section-bg p-8">
+            <h2 class="text-3xl font-bold text-center mb-8 text-gray-800">Choose Your Plan</h2>
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <div class="bg-white p-6 rounded-lg shadow-md text-center">
+                <div class="p-6 rounded-lg shadow-md text-center featured">
                     <h3 class="text-xl font-bold mb-4">1 Month</h3>
                     <p class="text-2xl font-bold mb-4">₹5,000</p>
                     <p class="mb-4">1 Daily Meeting</p>
-                    <button onclick="subscribe('1 Month', 5000)" class="bg-teal-600 text-white px-4 py-2 rounded hover:bg-teal-700">Subscribe</button>
+                    <button onclick="subscribe('1 Month', 5000)" class="btn-primary">Subscribe</button>
                 </div>
-                <div class="bg-white p-6 rounded-lg shadow-md text-center">
+                <div class="p-6 rounded-lg shadow-md text-center featured">
                     <h3 class="text-xl font-bold mb-4">3 Months</h3>
                     <p class="text-2xl font-bold mb-4">₹12,000</p>
                     <p class="mb-4">2 Daily Meetings</p>
-                    <button onclick="subscribe('3 Months', 12000)" class="bg-teal-600 text-white px-4 py-2 rounded hover:bg-teal-700">Subscribe</button>
+                    <button onclick="subscribe('3 Months', 12000)" class="btn-primary">Subscribe</button>
                 </div>
-                <div class="bg-white p-6 rounded-lg shadow-md text-center">
+                <div class="p-6 rounded-lg shadow-md text-center featured">
                     <h3 class="text-xl font-bold mb-4">Lifetime</h3>
                     <p class="text-2xl font-bold mb-4">₹20,000</p>
                     <p class="mb-4">Unlimited Daily Meetings</p>
-                    <button onclick="subscribe('Lifetime', 20000)" class="bg-teal-600 text-white px-4 py-2 rounded hover:bg-teal-700">Subscribe</button>
+                    <button onclick="subscribe('Lifetime', 20000)" class="btn-primary">Subscribe</button>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Premium Features -->
-    <section id="premium" class="py-12 bg-white">
-        <div class="container mx-auto">
-            <h2 class="text-3xl font-bold text-center mb-8">Boost Your Profile</h2>
+    <section id="premium" class="py-12">
+        <div class="container mx-auto section-bg p-8">
+            <h2 class="text-3xl font-bold text-center mb-8 text-gray-800">Boost Your Profile</h2>
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <div class="bg-gray-100 p-6 rounded-lg shadow-md text-center">
-                    <h3 class="text-xl font-bold mb-4">Premium Profile</h3>
+                <div class="p-6 rounded-lg shadow-md text-center">
+                    <h3 class="text-xl font-bold mb-4">Premium Profile <span class="premium-badge">Premium</span></h3>
                     <p class="text-2xl font-bold mb-4">₹999</p>
                     <p class="mb-4">Get a Premium badge, highlighted profile, and top search ranking!</p>
-                    <button onclick="subscribe('Premium Profile', 999)" class="bg-teal-600 text-white px-4 py-2 rounded hover:bg-teal-700">Upgrade Now</button>
+                    <button onclick="subscribe('Premium Profile', 999)" class="btn-primary">Upgrade Now</button>
                 </div>
-                <div class="bg-gray-100 p-6 rounded-lg shadow-md text-center">
+                <div class="p-6 rounded-lg shadow-md text-center">
                     <h3 class="text-xl font-bold mb-4">Featured Listing</h3>
                     <p class="text-2xl font-bold mb-4">₹499/month</p>
                     <p class="mb-4">Appear at the top of booking lists!</p>
-                    <button onclick="subscribe('Featured Listing', 499)" class="bg-teal-600 text-white px-4 py-2 rounded hover:bg-teal-700">Get Featured</button>
+                    <button onclick="subscribe('Featured Listing', 499)" class="btn-primary">Get Featured</button>
                 </div>
-                <div class="bg-gray-100 p-6 rounded-lg shadow-md text-center">
+                <div class="p-6 rounded-lg shadow-md text-center">
                     <h3 class="text-xl font-bold mb-4">Profile Boost</h3>
                     <p class="text-2xl font-bold mb-4">₹199/24hr</p>
                     <p class="mb-4">Increase your profile views for 24 hours!</p>
-                    <button onclick="subscribe('Profile Boost', 199)" class="bg-teal-600 text-white px-4 py-2 rounded hover:bg-teal-700">Boost Now</button>
+                    <button onclick="subscribe('Profile Boost', 199)" class="btn-primary">Boost Now</button>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Booking Section -->
-    <section id="book" class="py-12 bg-gray-100">
-        <div class="container mx-auto">
-            <h2 class="text-3xl font-bold text-center mb-8">Book a Meeting</h2>
-            <form id="bookingForm" class="max-w-lg mx-auto bg-white p-8 rounded-lg shadow-md">
+    <section id="book" class="py-12">
+        <div class="container mx-auto section-bg p-8">
+            <h2 class="text-3xl font-bold text-center mb-8 text-gray-800">Book a Meeting</h2>
+            <form id="bookingForm" class="max-w-lg mx-auto">
                 <div class="mb-4">
                     <label for="booking_state" class="block text-gray-700">Select State</label>
                     <select id="booking_state" class="w-full p-2 border rounded" required>
@@ -234,18 +270,18 @@
                 <div class="mb-4">
                     <label class="block text-gray-700">Priority Booking (₹299)</label>
                     <input type="checkbox" id="priority" value="priority"> Get priority booking
-                    <button type="button" onclick="subscribe('Priority Booking', 299)" class="bg-teal-600 text-white px-4 py-2 rounded hover:bg-teal-700 ml-2">Pay ₹299</button>
+                    <button type="button" onclick="subscribe('Priority Booking', 299)" class="btn-primary ml-2">Pay ₹299</button>
                 </div>
-                <button type="submit" class="w-full bg-teal-600 text-white p-2 rounded hover:bg-teal-700">Book Now</button>
+                <button type="submit" class="btn-primary w-full">Book Now</button>
             </form>
         </div>
     </section>
 
     <!-- Call Boy Job Section -->
-    <section id="jobs" class="py-12 bg-white">
-        <div class="container mx-auto">
-            <h2 class="text-3xl font-bold text-center mb-8">Apply for Call Boy Job</h2>
-            <form id="jobForm" class="max-w-lg mx-auto bg-gray-100 p-8 rounded-lg shadow-md">
+    <section id="jobs" class="py-12">
+        <div class="container mx-auto section-bg p-8">
+            <h2 class="text-3xl font-bold text-center mb-8 text-gray-800">Apply for Call Boy Job</h2>
+            <form id="jobForm" class="max-w-lg mx-auto">
                 <div class="mb-4">
                     <label for="job_name" class="block text-gray-700">Full Name</label>
                     <input type="text" id="job_name" class="w-full p-2 border rounded" required>
@@ -302,17 +338,17 @@
                 </div>
                 <div class="mb-4">
                     <label class="block text-gray-700">Pay ₹199 for Verification</label>
-                    <button type="button" onclick="payVerification(199)" class="bg-teal-600 text-white px-4 py-2 rounded hover:bg-teal-700">Pay Now</button>
+                    <button type="button" onclick="payVerification(199)" class="btn-primary">Pay Now</button>
                 </div>
-                <button type="submit" class="w-full bg-teal-600 text-white p-2 rounded hover:bg-teal-700">Apply</button>
+                <button type="submit" class="btn-primary w-full">Apply</button>
             </form>
         </div>
     </section>
- <!-- Referral Program -->
-    <section id="referral" class="py-12 bg-gray-100">
-        <div class="container mx-auto">
-            <h2 class="text-3xl font-bold text-center mb-8">Refer & Earn ₹500</h2>
-            <form id="referralForm" class="max-w-lg mx-auto bg-white p-8 rounded-lg shadow-md">
+     <!-- Referral Program -->
+    <section id="referral" class="py-12">
+        <div class="container mx-auto section-bg p-8">
+            <h2 class="text-3xl font-bold text-center mb-8 text-gray-800">Refer & Earn ₹500</h2>
+            <form id="referralForm" class="max-w-lg mx-auto">
                 <div class="mb-4">
                     <label for="referrer_name" class="block text-gray-700">Your Name</label>
                     <input type="text" id="referrer_name" class="w-full p-2 border rounded" required>
@@ -325,26 +361,26 @@
                     <label for="friend_email" class="block text-gray-700">Friend's Email</label>
                     <input type="email" id="friend_email" class="w-full p-2 border rounded" required>
                 </div>
-                <button type="submit" class="w-full bg-teal-600 text-white p-2 rounded hover:bg-teal-700">Refer Now</button>
+                <button type="submit" class="btn-primary w-full">Refer Now</button>
             </form>
         </div>
     </section>
 
     <!-- Reviews Section -->
-    <section id="reviews" class="py-12 bg-white">
-        <div class="container mx-auto">
-            <h2 class="text-3xl font-bold text-center mb-8">User Reviews</h2>
+    <section id="reviews" class="py-12">
+        <div class="container mx-auto section-bg p-8">
+            <h2 class="text-3xl font-bold text-center mb-8 text-gray-800">User Reviews</h2>
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <div class="bg-gray-100 p-6 rounded-lg shadow-md">
-                    <p class="text-gray-700">"Great experience, easy to book!"</p>
+                <div class="p-6 rounded-lg shadow-md">
+                    <p class="text-gray-700">"Amazing experience, super easy to use!"</p>
                     <p class="text-gray-500 mt-2">– Rahul, Delhi</p>
                 </div>
-                <div class="bg-gray-100 p-6 rounded-lg shadow-md">
-                    <p class="text-gray-700">"Professional service, highly recommend!"</p>
+                <div class="p-6 rounded-lg shadow-md">
+                    <p class="text-gray-700">"Loved the vibe, very professional!"</p>
                     <p class="text-gray-500 mt-2">– Priya, Mumbai</p>
                 </div>
-                <div class="bg-gray-100 p-6 rounded-lg shadow-md">
-                    <p class="text-gray-700">"Found exactly what I was looking for!"</p>
+                <div class="p-6 rounded-lg shadow-md">
+                    <p class="text-gray-700">"Perfect for finding the right match!"</p>
                     <p class="text-gray-500 mt-2">– Ankit, Bangalore</p>
                 </div>
             </div>
@@ -352,12 +388,12 @@
     </section>
 
     <!-- Terms Page Link -->
-    <section class="py-4 bg-gray-100 text-center">
-        <a href="#terms" class="text-teal-600 hover:underline">Terms & Conditions | Privacy Policy</a>
+    <section class="py-4 text-center">
+        <a href="#terms" class="text-pink-600 hover:underline">Terms & Conditions | Privacy Policy</a>
     </section>
 
     <!-- Footer -->
-    <footer class="bg-teal-600 text-white py-4 text-center">
+    <footer class="text-white py-4 text-center">
         <p>© 2025 Adult Meeting. All rights reserved. Contact: adultmeeting.support@gmail.com</p>
     </footer>
 
@@ -376,7 +412,7 @@
             profileSelect.innerHTML = '<option value="">Choose Profile</option>';
             profiles
                 .filter((p) => p.state === state)
-                .sort((a, b) => (b.featured || b.premium) - (a.featured || a.premium)) // Prioritize featured/premium
+                .sort((a, b) => (b.featured || b.premium) - (a.featured || a.premium))
                 .map((p) => `<option value="${p.id}">${p.name} (${p.gender})${p.premium ? ' [Premium]' : ''}${p.featured ? ' [Featured]' : ''}</option>`)
                 .forEach(opt => profileSelect.innerHTML += opt);
         });
